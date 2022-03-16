@@ -121,14 +121,19 @@ function checkForButtonPresses(interaction) {
 	}
 }
 function checkForLostArkSelect(interaction) {
+	const { lostArkClasses } = require('../store.json');
+
 	// If interaction is in fact a Lost Ark Main Class Dropdown
 	if (!interaction.isSelectMenu()) return
 	if (interaction.values.length > 1) return
 
+	const validClasses = lostArkClasses
+	if (!validClasses.includes(interaction.values[0])) return
+
 	// Load some data in variables
 	let client = interaction.client
 	let roleName = interaction.values[0]
-	const { lostArkClasses } = require('../store.json');
+
 	let allClasses = []
 
 	// Some Error checking
