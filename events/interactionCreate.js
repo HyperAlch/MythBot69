@@ -33,6 +33,9 @@ async function checkForCommands(interaction) {
 	else if (commandName === "lost-ark-pvp-access-setup") {
 		await require("../commands/lost-ark-pvp-access-setup").execute(interaction)
 	}
+	else if (commandName === "tower-of-fantasy-channel-setup") {
+		await require("../commands/tower-of-fantasy-channel-setup").execute(interaction)
+	}
 
 
 }
@@ -118,6 +121,7 @@ function checkForButtonPresses(interaction) {
 		nwGameRoleLogicSetup("Archeage", "join-archeage", "leave-archeage")
 		nwGameRoleLogicSetup("debater", "join-debate", "leave-debate")
 		nwGameRoleLogicSetup("pvp access requested", "join-lost-ark-pvp-request-access", "NA")
+		nwGameRoleLogicSetup("Tower of Fantasy", "join-tower-of-fantasy", "leave-tower-of-fantasy")
 	}
 }
 function checkForLostArkSelect(interaction) {
